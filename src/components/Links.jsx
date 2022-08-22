@@ -17,7 +17,7 @@ const social = [
     link: "https://steamcommunity.com/id/Vaylots/",
   },
   {
-    title: "📞Disсord📞",
+    title: "🤖Disсord🤖",
     link: "https://discordapp.com/users/386504845672316929",
   },
 ];
