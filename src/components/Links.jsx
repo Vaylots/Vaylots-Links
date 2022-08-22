@@ -30,7 +30,7 @@ const Links = () => {
           <li
             onClick={() => window.open(`${obj.link}`, "_blank")}
             key={obj.title}
-            className="  select-none cursor-pointer hover:shadow-2xl  hover:bg-stone-900   custom-text-bg rounded-3xl border-neutral-900   w-96    h-16 flex flex-col justify-center items-center mt-2  "
+            className="  select-none cursor-pointer hover:shadow-2xl  hover:bg-stone-900   custom-text-bg rounded-3xl border-neutral-900   w-10/12      h-16 flex flex-col justify-center items-center mt-2  "
           >
             <p>{obj.title}</p>
           </li>
