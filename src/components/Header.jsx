@@ -1,4 +1,4 @@
-const Header = () => {
+export const Header = () => {
   return (
     <header className=" mb-8 text-center  flex flex-col  items-center  ">
       <img
@@ -6,7 +6,7 @@ const Header = () => {
         src={"/img/Avatar.jpg"}
         alt=""
       />
-      <p className="mt-2 mb-2 text-white rounded-xl w-28 h-8 custom-text-bg  ">
+      <p className="mt-2 mb-2 leading-8 text-white rounded-xl w-28 h-8 custom-text-bg  ">
         @Vaylots <br />
       </p>
       <p className="text-white text-xl -mb-6  justify-center items-center flex">
@@ -15,4 +15,3 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
