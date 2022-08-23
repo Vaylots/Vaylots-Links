@@ -1,10 +1,9 @@
-import Avatar from "../assets/Avatar.jpg";
 const Header = () => {
   return (
     <header className=" mb-8 text-center  flex flex-col  items-center  ">
       <img
         className="rounded-full border border-neutral-800  w-32 mb-2    "
-        src={Avatar}
+        src={"/img/Avatar.jpg"}
         alt=""
       />
       <p className="mt-2 mb-2 text-white rounded-xl w-28 h-8 custom-text-bg  ">

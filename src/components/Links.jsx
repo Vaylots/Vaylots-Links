@@ -1,24 +1,29 @@
 import React from "react";
 const social = [
   {
-    title: "💬VK💬",
+    title: "VK",
     link: "https://vk.com/vaylots",
+    svg: "/assets/vk.svg",
   },
   {
-    title: "📞Telegram📞",
+    title: "Telegram",
     link: "https://t.me/Vaylots",
+    svg: "/assets/telegram.svg",
   },
   {
-    title: "🖥️GitHub🖥️",
+    title: "GitHub",
     link: "https://github.com/Vaylots",
+    svg: "/assets/github.svg",
   },
   {
-    title: "🎮Steam🎮",
+    title: "Steam",
     link: "https://steamcommunity.com/id/Vaylots/",
+    svg: "/assets/steam.svg",
   },
   {
-    title: "🤖Disсord🤖",
+    title: "Disсord",
     link: "https://discordapp.com/users/386504845672316929",
+    svg: "/assets/discord.svg",
   },
 ];
 
@@ -32,7 +37,23 @@ const Links = () => {
             key={obj.title}
             className="  select-none cursor-pointer hover:shadow-2xl  hover:bg-stone-900   custom-text-bg rounded-3xl border-neutral-900   w-96    h-16 flex flex-col justify-center items-center mt-2  "
           >
-            <p>{obj.title}</p>
+            <p className="flex">
+              <img
+                className=" mr-2"
+                width={18}
+                height={18}
+                src={obj.svg}
+                alt=""
+              />
+              {obj.title}
+              <img
+                className="ml-2"
+                width={18}
+                height={18}
+                src={obj.svg}
+                alt=""
+              />
+            </p>
           </li>
         );
       })}
