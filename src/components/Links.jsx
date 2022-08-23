@@ -39,7 +39,7 @@ export const Links = () => {
                         select-none cursor-pointer hover:shadow-2xl   
                         custom-text-bg w-96  h-16 rounded-3xl
                       border-neutral-900
-                      hover:bg-stone-900  mb-4 "
+                      hover:bg-stone-900  mb-3 "
             >
               <img
                 className=" mr-2"
