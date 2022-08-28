@@ -6,12 +6,20 @@ import { Header } from "./components/Header";
 import { Links } from "./components/Links";
 import { Admin } from "./pages/Admin";
 import "./scss/App.scss";
+const server =
+  "https://vaylots-link-in-bio-server-git-master-vaylots.vercel.app";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home Header={Header} Links={Links} />} />
-      <Route path="/admin" element={<Admin React={React} axios={axios} />} />
+      <Route
+        path="/"
+        element={<Home server={server} Header={Header} Links={Links} />}
+      />
+      <Route
+        path="/admin"
+        element={<Admin server={server} React={React} axios={axios} />}
+      />
     </Routes>
   );
 }

@@ -1,7 +1,7 @@
-export const Admin = ({ React, axios }) => {
+export const Admin = ({ React, axios, server }) => {
   const [loginStatus, setLoginStatus] = React.useState();
   const changeStatus = (userData) => {
-    axios.post("http://localhost:80/login", userData).then((res) => {
+    axios.post(server + "/login", userData).then((res) => {
       if (res.data.status === "success") {
         setLoginStatus(true);
       }
@@ -9,7 +9,7 @@ export const Admin = ({ React, axios }) => {
   };
 
   const addLink = (LinkData) => {
-    axios.post("http://localhost:80/add", LinkData).then((res) => {
+    axios.post(server + "/add", LinkData).then((res) => {
       alert("Сервис добавлен");
     });
   };

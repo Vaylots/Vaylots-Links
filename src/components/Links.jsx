@@ -1,14 +1,10 @@
 import React from "react";
 import axios from "axios";
 
-// Disсord
-// https://discordapp.com/users/386504845672316929
-// /assets/discord.svg
-
-export const Links = () => {
+export const Links = ({ server }) => {
   const [services, setServices] = React.useState([]);
 
-  axios.get("http://localhost:80/links").then((res) => {
+  axios.get(server + "/links").then((res) => {
     setServices(res.data);
   });
 
