@@ -1,24 +1,18 @@
-import React from 'react';
-import {Header} from "./components/Header"
-import {Links} from "./components/Links";
-import "./App.css";
-
-
+import React from "react";
+import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Header } from "./components/Header";
+import { Links } from "./components/Links";
+import { Admin } from "./pages/Admin";
+import "./scss/App.scss";
 
 function App() {
-
-  
   return (
-    
-    <div className="app h-screen text-lg   bg-[url('../public/img/Avatar.jpg')] bg-cover bg-no-repeat bg-center flex flex-row min-h-screen justify-center items-center ">
-      <div className="blur-color  w-full h-full flex flex-col justify-center items-center backdrop-blur-md  ">
-        <main className=" w-full flex flex-col  items-center">
-          <Header />
-          <Links/>
-          
-        </main>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home Header={Header} Links={Links} />} />
+      <Route path="/admin" element={<Admin React={React} axios={axios} />} />
+    </Routes>
   );
 }
 
