@@ -1,36 +1,17 @@
 import React from "react";
-const social = [
-  {
-    title: "VK",
-    link: "https://vk.com/vaylots",
-    svg: "/assets/vk.svg",
-  },
-  {
-    title: "Telegram",
-    link: "https://t.me/Vaylots",
-    svg: "/assets/telegram.svg",
-  },
-  {
-    title: "GitHub",
-    link: "https://github.com/Vaylots",
-    svg: "/assets/github.svg",
-  },
-  {
-    title: "Steam",
-    link: "https://steamcommunity.com/id/Vaylots/",
-    svg: "/assets/steam.svg",
-  },
-  {
-    title: "Disсord",
-    link: "https://discordapp.com/users/386504845672316929",
-    svg: "/assets/discord.svg",
-  },
-];
+import axios from "axios";
 
 export const Links = () => {
+  const [services, setServices] = React.useState([]);
+
+  axios.get("http://localhost:80/links").then((res) => {
+    setServices(res.data);
+  });
+
   return (
     <ul className=" w-full flex flex-col  justify-center items-center text-white">
-      {social.map((obj) => {
+      {services.map((obj) => {
+        console.log(obj);
         return (
           <li key={obj.title}>
             <button
@@ -45,7 +26,7 @@ export const Links = () => {
                 className=" mr-2"
                 width={18}
                 height={18}
-                src={obj.svg}
+                src={obj.img}
                 alt=""
               />
               {obj.title}
@@ -53,7 +34,7 @@ export const Links = () => {
                 className="ml-2"
                 width={18}
                 height={18}
-                src={obj.svg}
+                src={obj.img}
                 alt=""
               />
             </button>

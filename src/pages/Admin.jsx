@@ -2,13 +2,19 @@ export const Admin = ({ React, axios }) => {
   const [loginStatus, setLoginStatus] = React.useState();
   const changeStatus = (userData) => {
     axios.post("http://localhost:80/login", userData).then((res) => {
-      if (res.data.status == "success") {
+      if (res.data.status === "success") {
         setLoginStatus(true);
       }
     });
   };
 
-  const addLink = () => {};
+  const addLink = (LinkData) => {
+    axios.post("http://localhost:80/add", LinkData).then((res) => {
+      if (res.data.status === "success") {
+        setLoginStatus(true);
+      }
+    });
+  };
 
   return (
     <div className="app h-screen text-lg   bg-[url('../../public/img/Avatar.jpg')] bg-cover bg-no-repeat bg-center flex flex-row min-h-screen justify-center items-center ">
@@ -28,7 +34,7 @@ export const Admin = ({ React, axios }) => {
               </li>
               <li className=" m-4 ">
                 <input
-                  id="link"
+                  id="url"
                   className="p-2 w-96  rounded-xl"
                   type="text"
                   placeholder={"Введите ссылку сервиса"}
@@ -43,7 +49,13 @@ export const Admin = ({ React, axios }) => {
                 />
               </li>
               <button
-                onClick={addLink}
+                onClick={() => {
+                  addLink({
+                    title: `${document.getElementById("title").value}`,
+                    url: `${document.getElementById("url").value}`,
+                    img: `${document.getElementById("path").value}`,
+                  });
+                }}
                 className="link-button text-white custom-text-bg w-96 rounded-xl h-12"
               >
                 Добавить
