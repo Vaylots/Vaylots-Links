@@ -10,9 +10,7 @@ export const Admin = ({ React, axios }) => {
 
   const addLink = (LinkData) => {
     axios.post("http://localhost:80/add", LinkData).then((res) => {
-      if (res.data.status === "success") {
-        setLoginStatus(true);
-      }
+      alert("Сервис добавлен");
     });
   };
 
