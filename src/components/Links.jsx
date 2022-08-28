@@ -19,7 +19,7 @@ export const Links = () => {
         return (
           <li key={obj.title}>
             <button
-              onClick={() => window.open(`${obj.link}`, "_blank")}
+              onClick={() => window.open(`${obj.url}`, "_blank")}
               className=" link-button flex justify-center items-center 
                         select-none cursor-pointer hover:shadow-2xl   
                         custom-text-bg w-80   h-16 rounded-3xl
