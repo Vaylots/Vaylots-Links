@@ -18,7 +18,7 @@ export const Links = ({ server }) => {
         </div>
       ) : (
         services.map((obj) => {
-          console.log(obj);
+         
           return (
             <li key={obj.title}>
               <button
