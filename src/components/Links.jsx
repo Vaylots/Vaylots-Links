@@ -5,10 +5,12 @@ export const Links = ({ server }) => {
   const [services, setServices] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
-  axios.get(server + "/links").then((res) => {
-    setServices(res.data);
-    setIsLoading(false);
-  });
+  React.useEffect(() => {
+    axios.get(server + "/links").then((res) => {
+      setServices(res.data);
+      setIsLoading(false);
+    });
+  }, []);
 
   return (
     <ul className=" w-full flex flex-col  justify-center items-center text-white">
@@ -18,7 +20,6 @@ export const Links = ({ server }) => {
         </div>
       ) : (
         services.map((obj) => {
-         
           return (
             <li key={obj.title}>
               <button
