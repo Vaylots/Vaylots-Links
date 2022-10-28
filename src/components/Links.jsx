@@ -6,16 +6,19 @@ export const Links = ({ server }) => {
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    axios.get(server + "/links").then((res) => {
-      setServices(res.data);
-      setIsLoading(false);
-    });
+    const fetchData = async () => {
+      await axios.get(server + "/links").then((res) => {
+        setServices(res.data);
+        setIsLoading(false);
+      });
+    };
+    fetchData();
   }, []);
 
   return (
     <ul className=" w-full flex flex-col  justify-center items-center text-white">
       {isLoading ? (
-        <div class="typewriter">
+        <div className="typewriter">
           <h1>Loading...</h1>
         </div>
       ) : (
